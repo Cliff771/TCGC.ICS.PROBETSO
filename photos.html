@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/x-icon" href="tcgc_logo.png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+		integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+	 	crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500&display=swap" rel="stylesheet">
+
+	<title>Photos | Luxmundis Cup 2023</title>
+
+	<style>
+		body {
+			background-color: white;
+			font-family: 'League Spartan', sans-serif;
+			padding: 10px;
+			margin: 0;
+			height: 1000px;
+		}
+
+		.navbar {
+			background-color: #195E2F;
+            display: flex;
+			height: 20px;
+            align-items: center;
+            justify-content: space-evenly;
+            margin: 0;
+            padding: 30px;
+            font-size: 18px;	 	
+		}
+
+		.navbar ul{
+            display: flex;
+            list-style: none;
+            margin: 10px 20px;
+			margin-left: 110px;
+        }
+
+		.navbar ul li{
+			padding: 10px 30px;
+			position: relative;
+		}
+
+		.navbar ul li a{
+			position: relative;
+			color: #d3d1d1;
+			font-family: 'Poppins' sans-serif;
+			text-decoration: none;
+			letter-spacing: 0.5px;
+			padding: 0 10px;
+		}
+
+		.navbar ul li a:after{
+			content: "";
+			position: absolute;
+			background-color: white;
+			height: 3px;
+			width: 0%;
+			left: 0px;
+			bottom: -9px;
+			transition: 0.3s;
+						
+		}
+
+		.navbar ul li a:hover{
+			color: white;
+		}
+
+		.navbar ul li a:hover:after{
+			width: 100%;
+		}
+
+		.logo{
+            display: flex;
+            position: absolute;
+            top: -95px;
+            margin: auto;
+            padding: 30px;
+        }
+
+		.dropdown_menu{
+			display: none;
+		}
+
+		.navbar ul li:hover .dropdown_menu{
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 100%;
+			background-color: #195E2F;
+		}
+
+		.dropdown_menu ul{
+			display: block;
+			margin: 10px;
+		}
+
+		.dropdown_menu ul li{
+			width: 150px;
+			padding: 10px;
+		}
+		
+		.gallery {
+			margin-top: 100px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; 
+            overflow-x: auto; 
+        }
+
+        .photo {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+            margin: 10px;
+            width: 350px;
+        }
+
+        .photo img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .other-photos {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .other-photos img {
+            max-width: 80px;
+            margin: 5px;
+            cursor: pointer; /* Make other photos clickable */
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+            display: flex; /* Use flexbox to center the modal */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+        }
+
+        .modal-content {
+            display: block;
+            max-width: 90%; /* Responsive width */
+            max-height: 90%; /* Responsive height */
+            border-radius: 5px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+	</style>
+</head>
+<body>
+
+	<div>
+		<nav class="navbar">
+			<img src="LMC-BG.PNG" style="height: 70px;" alt="tcgc_logo">
+			<ul class="menu">
+				<li><a href="home.html" type="activate">Home</a></li>
+				<li><a href="#">Gallery <i class="fas fa-caret-down"></i></a>
+					<div class="dropdown_menu">
+						<ul>
+							<li><a href="photos.html">Photos</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="index.html">Logout</a></li>
+			</ul>
+		</nav>
+	</div>
+	
+	<center>
+		<div class="gallery">
+            <div class="photo" onclick="togglePhotos('photo1')">
+                <h3>Cheerdance</h3>
+                <img src="CD.jpg" alt="Photo 1">
+                <p>The cheerdance showcases talented cheerleading competition that showcases talented cheerleading teams from various institutes as they perform dynamic routines filled with stunts, choreography, and school spirit. Each team competes for top honors, demonstrating creativity, teamwork, and athleticism in an electrifying atmosphere.</p>
+                <div class="other-photos" id="photo1">
+                    <h4>Other Photos</h4>
+                    <img src="CD1.jpg" alt="Other Photo 1" onclick="openModal('CD1.jpg')">
+                    <img src="CD2.jpg" alt="Other Photo 2" onclick="openModal('CD2.jpg')">
+                    <img src="CD3.jpg" alt="Other Photo 3" onclick="openModal('CD3.jpg')">
+                </div>
+            </div>
+            <div class="photo" onclick="togglePhotos('photo2')">
+                <h3>Battle of the Bands</h3>
+                <img src="BOTB.jpg" alt="Photo 2">
+                <p>The Battle of the Bands is an exciting musical event where bands from different institutes compete to showcase their unique sounds and original compositions. Audiences enjoy a night of live performances, celebrating the diverse talents of musicians while vying for the title of the best band in the campus.</p>
+                <div class="other-photos" id="photo2">
+                    <h4>Other Photos</h4>
+                    <img src="BOTB1.jpg" alt="Other Photo 1" onclick="openModal('BOTB1.jpg')">
+                    <img src="BOTB2.jpg" alt="Other Photo 2" onclick="openModal('BOTB2.jpg')">
+                    <img src="BOTB3.jpg" alt="Other Photo 3" onclick="openModal('BOTB3.jpg')">
+                </div>
+            </div>
+            <div class="photo" onclick="togglePhotos('photo3')">
+                <h3>MR. & MS TCGC</h3>
+                <img src="MRMS.jpg" alt="Photo 3">
+                <p>The Mr. and Ms. TCGC pageant celebrates the charisma and talents of contestants from various institutes. Participants compete in categories such as talent and Q&A segments, highlighting their individuality and leadership qualities in a fun and inspiring atmosphere.</p>
+                <div class="other-photos" id="photo3">
+                    <h4>Other Photos</h4>
+                    <img src="MRMS1.jpg" alt="Other Photo 1" onclick="openModal('MRMS1.jpg')">
+                    <img src="MRMS2.jpg" alt                    <img src="MRMS2.jpg" alt="Other Photo 2" onclick="openModal('MRMS2.jpg')">
+                    <img src="MRMS3.jpg" alt="Other Photo 3" onclick="openModal('MRMS3.jpg')">
+                </div>
+            </div>
+        </div>
+	</center>
+
+    
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage" alt="Modal Image">
+    </div>
+
+    <script>
+        
+        window.onload = function() {
+            const modalImage = document.getElementById("modalImage");
+            modalImage.src = "tcgc_logo.png"; 
+            openModal(modalImage.src); 
+        };
+
+        function togglePhotos(photoId) {
+            const otherPhotos = document.getElementById(photoId);
+            if (otherPhotos.style.display === "none" || otherPhotos.style.display === "") {
+                otherPhotos.style.display = "block";
+            } else {
+                otherPhotos.style.display = "none";
+            }
+        }
+
+        function openModal(imageSrc) {
+            const modal = document.getElementById("myModal");
+            const modalImage = document.getElementById("modalImage");
+            modal.style.display = "flex"; 
+            modalImage.src = imageSrc;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+        
+        window.onclick = function(event) {
+            const modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>

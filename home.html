@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/x-icon" href="tcgc_logo.png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+		integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+	 	crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500&display=swap" rel="stylesheet">
+
+	<title>Home | Luxmundis Cup 2024</title>
+
+	<style>
+		body {
+
+			background-color: white;
+			font-family: 'League Spartan', sans-serif;
+			padding: 10px;
+			margin: 0;
+		}
+		.navbar {
+				background-color: #195E2F;
+                display: flex;
+				height: 20px;
+                align-items: center;
+                justify-content: space-evenly;
+                margin: 0;
+                padding: 30px;
+                font-size: 18px;
+				
+		}
+
+		.navbar ul{
+                display: flex;
+                list-style: none;
+                margin: 10px 20px;
+				margin-left: 110px;
+        }
+
+		.navbar ul li{
+			padding: 10px 30px;
+			position: relative;
+		}
+
+		.navbar ul li a{
+			position: relative;
+			color: #d3d1d1;
+			font-family: 'Poppins' sans-serif;
+			text-decoration: none;
+			letter-spacing: 0.5px;
+			padding: 0 10px;
+		}
+
+		.navbar ul li a:after{
+			content: "";
+			position: absolute;
+			background-color: white;
+			height: 3px;
+			width: 0%;
+			left: 0px;
+			bottom: -9px;
+			transition: 0.3s;
+						
+		}
+
+		.navbar ul li a:hover{
+			color: white;
+		}
+
+		.navbar ul li a:hover:after{
+			width: 100%;
+			
+		}
+
+		.logo{
+            display: flex;
+            position: absolute;
+            top: -95px;
+            margin: auto;
+            padding: 30px;
+        }
+
+		span{
+			color: #195E2F;
+			font-size: 31px;
+			text-decoration: dotted;
+		}
+
+		.dropdown_menu{
+			display: none;
+		}
+
+		.navbar ul li:hover .dropdown_menu{
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 100%;
+			background-color: #195E2F;
+			transition: 0.3s;
+		}
+
+		.dropdown_menu ul{
+			display: block;
+			margin: 10px;
+		}
+
+		.dropdown_menu ul li{
+			width: 150px;
+			padding: 10px;
+		}
+
+		.albums{
+			position: absolute;
+			bottom: 11%;
+			left: 31%;
+			border: solid;
+			border-radius: 5px;
+			display: inline-block;
+            outline: 0;
+            border: 0;
+            cursor: pointer;
+            background: #195E2F;
+            color: #FFFFFF;
+            border-radius: 8px;
+            padding: 14px 24px 16px;
+            font-size: 15px;
+            font-weight: 700;
+			transition: transform 200ms, background 500ms;
+            line-height: .8;
+            z-index: 1;
+		}
+
+		.albums:hover{
+			background-color: #89A891;
+			
+		}
+	
+	.intro-container {
+			height: 400px;
+			width: 1000px;
+			margin-top: 150px;
+			margin-left: 550px;
+            display: flex;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s;
+            max-width: 800px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+			align-items: center;
+        }
+
+        .intro-container:hover {
+            transform: scale(1.05);
+        }
+	
+	       .text-section {
+            flex: 1;
+            padding-right: 20px;
+			font-size: 18px;
+        }
+
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #4CAF50;
+            transition: border-color 0.3s;
+            animation: spin 2s ease-in-out infinite;
+        }
+
+        .profile-pic:hover {
+            border-color: #FF5722;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(360deg);
+            }
+            50% {
+                transform: rotate(360deg);
+            }
+            75% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        h1 {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+		.socials {
+            text-align: center;
+            margin-top: 20px;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            margin-top: 20px;
+            z-index: 10;
+        }
+ 
+        .socials {
+            text-align: center;
+            margin-top: 20px;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            margin-top: 20px;
+            z-index: 10;
+        }
+ 
+        .socials a {
+            margin: 0 15px;
+            color: #195E2F;
+            font-size: 24px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+ 
+        .socials a:hover {
+            color: #FF5722;
+        }
+
+	</style>
+</head>
+<body>
+
+	<div>
+		<nav class="navbar">
+			<img src="LMC-BG.PNG" style="height: 70px;" alt="tcgc_logo">
+			<ul class="menu">
+				<li><a href="home.html" >Home</a></li>
+				<li><a href="#">Gallery <i class="fas fa-caret-down"></i></a>
+					<div class="dropdown_menu">
+						<ul>
+							<li><a href="photos.html">Photos</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="index.html">Logout</a></li>
+			</ul>
+		</nav>
+		
+	</div> 
+    <div class="intro-container">
+        <div class="text-section">
+            <h1>Pleasantries! I am <span>Clifford R. Probetso </span></h1>
+            <p> <b>A first-year student pursuing a Bachelor of Science in Computer Science at Tangub City Global College and a passionate individual with a love for technology and creativity. I enjoy exploring new ideas and sharing knowledge with others. In my free time, I love reading, thrifting, and experimenting with new recipes. </b></p>
+        </div>
+        <img src="CLIFF.jpg" alt="Your Name" class="profile-pic">
+	</div>
+		<div class="socials">
+			<h2>My Contacts</h2>
+			<a href="https://www.facebook.com/biscuitsncliff" target="_blank"><i class="fab fa-facebook-square"></i></a>
+			<a href="https://https://www.instagram.com/esotericliff/profilecard/?igsh=MWZhMWE0bjc4cXd1aQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+			<a href="mailto:droffilc771@gmail.com"><i class="fas fa-envelope"></i>
+			<a href="tel:09510069125"><i class="fas fa-phone"></i> 0951 006 9125</a>
+	 
+	</a>
+		</div>
+</body>
+</html>
